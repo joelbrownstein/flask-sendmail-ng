@@ -1,31 +1,10 @@
-"""
-Flask-Sendmail
-----------
-
-A Flask extension for sending email messages via a system's
-built-in sendmail client.
-
-Please refer to the online documentation for details.
-
-Links
-`````
-
-* `documentation <http://flask-sendmail.readthedocs.org>`_
-* `development version
-  <https://github.com/ajford/flask-sendmail/tarball/master#egg=Flask-Sendmail>`_
-"""
-try:
-    import multiprocessing
-except ImportError:
-    pass
-
 from setuptools import setup
 
 
 setup(
-    name='Flask-Sendmail',
-    version='0.2',
-    url='http://github.com/ajford/flask-sendmail',
+    name='Flask-Sendmail-ng',
+    version='0.3',
+    url='http://github.com/ncrocfer/flask-sendmail-ng',
     license='BSD',
     author='Anthony Ford',
     author_email='ford.anthonyj@gmail.com',
