@@ -1,8 +1,29 @@
-Flask-Sendmail is a Flask extension providing a simple interface for the
-system's sendmail client.
+Flask-Sendmail NG
+-----------------
 
-Flask-Sendmail is also inteded to be a drop-in alternative for Flask-Mail.
+Flask-Sendmail-ng is a Flask extension providing a simple interface for
+the system's sendmail client.
 
-Online documentation is available at [flask-sendmail.readthedocs.org][]
+## Installation
+
+```
+pip install flask-sendmail-ng
+```
+
+## Why `ng`?
+
+Flask-sendmail-ng is a fork of [Flask-Sendmail](https://github.com/ajford/flask-sendmail),
+a package made by [@ajford](https://github.com/ajford) to create a drop-in alternative
+for Flask-Mail.
+
+This fork was necessary because the original repo was not updated for several years, and
+the support of Python 3 was not available.
+
+As I need it for one of my project I decided to release a new package. You can now work
+with Sendmail in your Python 3 projects using it.
+
+## Documentation
+
+Online documentation is available at the original link : [flask-sendmail.readthedocs.org][].
 
 [flask-sendmail.readthedocs.org]: http://flask-sendmail.readthedocs.org
