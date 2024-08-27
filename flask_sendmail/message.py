@@ -2,9 +2,16 @@ from email.mime.text import MIMEText
 import sys
 
 try:
-    from flask import _app_ctx_stack as stack
-except ImportError:
-    from flask import _request_ctx_stack as stack
+    from flask.globals import request_ctx
+except:
+    try:
+        from flask import _app_ctx_stack as stack
+    except ImportError:
+        from flask import _request_ctx_stack as stack
+    try:
+        request_ctx = stack.top
+    except:
+        request_ctx = None
 
 
 class BadHeaderError(Exception):
@@ -32,8 +39,8 @@ class Message(object):
                 reply_to=None, charset=None):
 
         if sender is None:
-            app = stack.top.app
-            sender = app.config.get("DEFAULT_MAIL_SENDER")
+            app = request_ctx.app if request_ctx else None
+            sender = app.config.get("DEFAULT_MAIL_SENDER") if app else None
 
         self.subject = subject
         self.sender = sender
